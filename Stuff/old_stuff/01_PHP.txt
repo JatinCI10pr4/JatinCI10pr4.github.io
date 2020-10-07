@@ -1,0 +1,200 @@
+> Start and End Tags
+-- So all php code sits between <?php and ?> tags. So anything
+   placed outside these tags will not be recognised as php code.
+
+> White-Spacing and Case-Sensitivity
+-- Php don't care that much about these two things so you don't nee
+   to worry about them that much.
+
+> Comments
+  // - Single line Comments
+  #  - Also single line comments (but // are preferred more)
+  /**/ - Multiline comments
+
+
+> Strings
+  > Defining Text Strings
+    ' -  using single quotes
+    ` - using delimiter
+    " - using double quotes
+    <<< - using here tags
+
+  > Escaping
+  -- use \ 'backslash' for escaping the characters
+
+  > Special characters in double quoted Strings
+  \n - New line
+  \r - Carriage return
+  \t - Tab
+  \\ - \
+  \$ - $
+  \0...\777 - Octal
+  \x0 .. \xFF - hexadecimal
+
+  > Difference between single quoted string and a double quoted string is
+    that u can directy embed variables into double quotes whereas not in
+    single quoted strings.
+
+  > Combining two strings
+  -- . can be used to concate strings together
+
+  > Validating Strings
+  -- so Validation is the process of checking the input coming from an
+     external resource
+
+  trim() -> function removes whitespaces from the beginning and the End
+  strlen() -> returns the length of the string
+
+
+  > Comparing String
+  == -> When comparing string with '==' case is important
+  strcasecmp(str1,str2) -> if true must be equal to zero
+                           can be used to ignore case
+                           str1 and str2 are the two strings that need
+                           to be compared ignoring the case.
+
+   > Formatting Text
+   -- The printf() function gives you more control as compared to print
+> Creating arrays
+
+   1. var = [val1, val2, val3];
+   2. var = array(val1,val2,val3);
+   3. var = [key1=>val1,key2=>val2];
+
+
+> Looping over arrays
+  -s Foreach is best for looping over arrays
+  syntax: foreach(arrayname as key => value) OR foreach(arrayname as value)
+
+  - count(array_name) can be used to get the length of the array
+
+  - in_array(value,array_name) can be used to check if the value is
+    is the array or not
+
+  - unset(array_name[key]) can be used to remove an element from an array
+
+  - implode("seperator","array")  - can be used to print whole array at ones.
+
+  - isarray(array_name) - can be used to check if a variable is array or not.
+
+  - for ex. there is a string like "bat, cat, rat, mat"
+    and u wanna convert it into an array
+
+    explode("seperator",array_name) can come in handy here it can convert
+    a string into an array.
+
+
+
+> Sorting Arrays
+
+
+
+  - sort(array_var) can be used to sort arrays which have numerical keys
+
+  - asort(array_var) can be used to sort arrays which have string keys
+    and u don't wanna mess up with them
+
+  Sort and asort sorts the array using the value
+
+  - ksort() sorts the array while keeping the value and key pair together
+    but it sorts the array according to the key ....
+
+> Global keyword
+
+
+-- or u can use $GLOBALS which is an array of all global arrays
+
+-- so if you wanna use any variable inside a function just put global
+   keyword before it and use it insede the function but make sure that
+   variable is not inside any other function or class.
+
+
+
+> functions
+
+   -- Parameters in function can be given default values just by using an = symbol
+      function funct_name(param = default_value)
+
+
+> Enforcing rules on arguments and return values
+
+  array - must be an array
+  bool  - must be a boolean
+  callable - must be something representing a function or a method
+  float - must be a floating point nubmer
+  int - must be an integer
+  string - must be a string
+  Name of a class  - must be an instance of that class
+
+
+ -for declarin parameter type
+  function function_name(datatype param)
+
+ - for declaring return type
+   function function_name(): return_data_type{
+     ...
+     ...
+     ..
+     return val;
+   }
+
+
+> Including different files in your php code
+
+  require 'file_name' ;
+
+  the above command will include the specified file into your php code.
+
+
+> Working with objects
+  -- "->"  symbol is used inorder to point out to object property.
+
+  -- "this" keyword referres to the current object in which you are
+
+  -- if u wanna define a static method then palce the word static before
+     function while defining a method.
+
+
+  -- call to a static method goes like this class_name::static_method
+
+> Constructors
+  -- Constructors are a great way of making sure that the arguments that
+     has been recieved are of the right data type
+     So you can carry out exception handling in constructor for these types
+     of problems.
+  -- to make a constructor for an object use _construct(params...) keyword.
+  -- there is no need to call a constructor seperately they automatically jumps
+     in when you are defining a class.
+
+
+> Indicating problems with Exceptions
+
+  -- the easy and simple way
+     throw new Exception(-----your message here-----);
+
+  -- the better way
+     try{
+       Code that you thing can cause exception
+       ...
+       ..
+       .
+     }catch(Exception $e){
+       print "Got an EXception <br> See full error message below : <br>".
+              $e->getMessage();
+     }
+
+> Extending an Object
+
+  -- class subclass_name extends superclass_name
+
+  -> Calling consturcotr of the parent class
+  parent::_construct(params...);
+
+
+
+> Regex in Php
+
+  > simple syntax ->  "/regex/"
+  > preg_match(regex,string);
+  > preg_match_all(regex,string);
+  > preg_replace(regex,new_val,string);   

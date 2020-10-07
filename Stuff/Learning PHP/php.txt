@@ -1,0 +1,379 @@
+> Start and End Tags
+  -- The php code sits between 
+     <?php (start tag) and ?> (end tag) 
+
+
+> $_POST variable 
+  -- it's basically an array variable which holds the 
+     values of submitted variables.
+
+> Here document 
+  -- like if you don't wanna use print again and again  
+     u can do it like this 
+     <<<TAG_NAME  
+     
+     multiline stuff here... 
+     ..
+     ..
+     .
+     
+     TAG_NAME;
+
+> $_SERVER[PHP_SELF]
+  --  $_SERVER is an array variable and PHP_SELF is also a variable 
+      which sits inside $_SERVER variable. PHP_SELF contains the location 
+      of the current page without protocol.
+
+
+> Printing formatted numbers 
+  -- use number_fomat(value) function to format a numeric value.
+
+
+> Comments in PHP
+  -- Sinle line comments 
+     // 
+     # 
+
+  -- multiline comments 
+     /**/
+
+
+> Printing simple strings
+  -- print 'string'
+
+> Escaping strings 
+  -- backslash \ can be used to escape different characters    
+   
+> Diff between single quoted and double quoted strings
+
+  -- The main difference is variable in double quoted
+     strings are added to the string 
+     whereas 
+     if you add a variable in a single quotes string 
+     it will not be added.
+
+
+> Concatening strings using . 
+
+> trim() function trims the string from start and end.
+
+> strlen(value) function returns the value of the string.
+
+> strcasecmp(val) compares two strings without taking the case in cosideration.
+
+> printf() can also be used to print strings - it is similar to c language.
+
+  -- %.2f tells that its for float digit and only 2 places after decimal.
+
+  -- +%d tells that here is the placeholder for a digit and if it is positive then
+     show the + sign before it .
+
+> Lower case - strtolower(value);
+> Upper case - strtoupper(value);   
+> captalising the first letter of a word 
+  ucword(value) - does exactly this
+  uc word can be used with strtolower(value) to get the most benifit out of it. 
+
+> Extracting a part of the string
+  -- substr(string ,startindex , no. of digit from here );
+  -- (-)ve value for startindex will start the string fom ending.
+
+> Replacing substring 
+  -- str_replace("substring","newstring","variable to work on");
+
+
+> variables in strings can also be put inside curly braces like 
+  {variable}
+
+
+> Things that are flase in php 
+  1. 0 and 0.0
+  2. String containing nothing and string containing character 0 
+  3. special constant false and null .
+
+
+> Making decisions 
+  1. if else
+  2. if elseif else
+  
+> ABS(value) function - Gives the absolute value 
+   
+> Compare string - using strcmp(str1, str2) to compare two strings in dictionary order.
+  -- strcmp() will return a (+)ve digit if it evaluates to be true(in case first
+     string is greater than the second string ) otherwise it 
+     will return a (-)ve digit or 0 if it evaluates to be false(in case of second string is 
+    greater than the first string).
+> <==> is a similar compare operator which can be used for any data types other than 
+  strings .
+
+
+> Arrays 
+  -- in php arrays are made up of key value pair 
+     Two different ways 
+     1. using the array function - array(key1=>val1,key2=>val2,key3=>val3);
+     2. using [key1=>val1,key2=>val2,key3=>val3];
+
+> Best way to loop over an arrays is : 
+  -- using the foreach(array as key => value)
+
+> Finding the size of an arrya 
+   - count(array_name);
+
+> Functions for arrays : 
+  - to check if a particular key exists or not: 
+   > array_key_exists('keyname',array); // return true or false
+ 
+  - to check if a particular value exists in array or not:
+   > in_array('value',array);  // return true or false
+ 
+  - to remove an element 
+   > unset(array_name[key]);
+ 
+  - to search the element and get it's key
+  > array_search(value,array_name);
+    // it will return the key of the value in the given array . 
+  
+  - Making a string from an array with implode
+  > implode('delimiter',array);  // this will return a string 
+  // implode can be used to iterate over values with specialised delimeters like </td><td>
+  // to make it easy for printing rows and columns .
+
+   * Importang : when using implode or explode - its much much better 
+     to define the variable on whic the processing is going to be done like 
+     this $var = array();
+    
+  - Making an array from a string 
+  explode("seperator",array_name) can come in handy here it can convert
+    a string into an array.
+
+> Sorting arrays  
+  -- sort() : sorts an array by its element values. 
+              It should be used for numerica arrays as it resets the keys 
+              while sorting the arrays.
+
+
+  -- asort() : sorts the array with their keys in place 
+               so it dosen't mess up with the keys of the array .
+                            
+                               
+  
+  -- ksort() : similar to asort but sorts the array according to the 
+               key not the element value.
+
+
+  -- you know about multi dimensional arrays .... 
+
+
+
+> Functions : 
+  
+  1. Default Value
+  -- specify default value of a perimeter by using = sign.
+  function function_name(param = value){
+    ...                                
+  }   
+
+  2. Optional Arguments 
+  -- Parameters whose default values are set already can be treated as 
+     optional arguments.
+
+
+
+
+
+> Variable Scope : 
+
+  1.
+  $GLOBALS[] - this array contains all the variable which are in global scope.
+  
+  for eg:
+  $dinner = bla bla ; // here is a simple variable 
+
+  function(){
+    $GLOBALS['dinner']; // this is how you can use any variable in global scope.
+  }
+
+  2. 
+  global - this keyword can be placed infront of any global variable inside the function
+  or class.
+
+  for eg:- 
+
+  function(){
+    global $dinner;
+
+    // u can also use it with multiple varialbe names 
+
+    global $var1, $var2, $var3; 
+  }
+
+
+> Running code in another file :
+  1. require filename.php 
+  -- so if you wanna use functions that you have already declared in another 
+     file then you can use the require keyword whith the name of that file 
+     before the content of your new file.
+     and then you can use the functions of the premade file.
+
+  -- when a problem occours it stops the program
+
+
+  2. include filename.php
+
+  -- similar to require filename.php
+  -- but it goes on even if it encounters a problem and dosen't stop the program.
+
+
+> Objects 
+
+  1. class - keyword can be used to define a class
+
+  2. Making an object : 
+
+     class class_name(){
+      $var1;
+      $var2;
+      function funct(){
+       // using this keyword 
+
+       $this->var1;
+       $this->var2;
+       
+        ...
+      }
+       ...
+     }    
+
+     $object = new class_name();
+
+  3. Referring to properties of object using (  ->  ) 
+     
+     $object->var1 // * Remember not to use $ sign for referring to properties 
+
+
+  4. Defining static method :
+    
+     public static function funct_name(){
+       ...
+     }
+
+
+ 5. Calling a static method :
+
+    * Always remember not to use the object name for referring to the 
+      static method.
+    * Always call the static method by using the Original Class name in which 
+      that method is declared.
+    * And don't place the $ sing before the name of the class.  
+      
+    
+
+     Class_name::static_meth_name();
+     
+     // and if the functions return a value then
+
+     $var = Class_name::static_meth_name();
+
+
+  6. Constructors: 
+     
+     * __construct() : Right two Dash _ and _ ok
+     * _construct() : Wrong one Dash _ 
+
+
+     -- So for creating a constructor use the _construct() function 
+     
+     -- The basic work of the constructor is to simplify the process 
+        of defining the object along with its properties 
+
+
+
+
+
+     How to do:
+
+     class foo{
+      $arg1;
+      $arg2;
+      $arg3;
+
+     public function __construct($arg1, $arg2, $arg3){
+         $this->arg1 = $arg1;
+         $this->arg2 = $arg2;
+         $this->arg3 = $arg3;
+     }
+
+     }  
+
+
+
+
+> Exceptions 
+
+  1. Throwing Exception 
+
+  -- throw new Exception("Error Message HERE");
+
+  2. try-catch block
+
+  try{
+    throw new Exception("Error Error Error - Hacker");
+  }catch (Exception $e)  // you can also use $exception $var or any other desired name for the variable
+  { 
+    print $e->getMessage(); // get message will get the error message from the exception  
+  }
+
+
+  output : Error Error Error - Hacker
+
+
+
+  > extend - is used to extend classes
+    parent::__construct is used to call the parent constructor 
+
+ > Namespaces or Packages 
+   namespace name;
+   use \folder\class as $nic;   
+
+
+
+> To hide the error message generated by POST use 
+ -- ?? '' for new version of php
+ -- isset(post[var]) to check if the value is set or not 
+
+
+> VAlidation on Numbers 
+  
+  1. Checking if the input type is number or float.
+
+ -- filterinput(INPUT_POST,"parameter",FILTER_VALIDATE_INT);
+ -- filterinput(INPUT_POST,"parameter",FILTER_VALIDATE_FLOAT); 
+
+  2. Getting the original length by trimming the whitespaces
+
+  -- strlen(trim(var)); 
+
+> For objects returning arrays 
+  obj {
+
+    return array(array(1,2,3),"var");
+  }
+
+  -- list($array_here, $variable_here) = obj();
+
+  // the array will destruct the return value from the object and 
+  // will put the returned values in the specified params.
+
+> Number Ranges 
+
+  -- filterinput function also support validation of range of numbers 
+    * but only for integers.
+
+  $var =  filterinput(INPUT_POST,'param',FILTER_VALIDATE_INT,array('options'=> array('min_range' => 2, 'max_range'=>20)));
+
+
+> EMAIL validation
+  -- filterinput(INPUT_POST,'email',FILTER_INPUT_EMAIL);  
+
+
+>   
