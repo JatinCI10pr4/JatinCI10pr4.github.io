@@ -1,5 +1,336 @@
-#heading{
-      font-size: large;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: blue;
+*,body{
+      margin: 0px;
+      padding:0px;      
 }
+
+.h1-name{
+      text-align: center;
+      font-family: verdana;
+      margin-top: 30px;
+      color: rgb(66, 66, 66);
+}
+
+.h2-profession{
+      line-height: 2em;
+      padding-right: 8px;
+      padding-left: 8px;
+      margin-top: 18px;
+      text-align: center;
+      font-family: monospace;
+      color: rgb(95, 95, 95);
+      font-weight: 200;
+}
+
+.navigation{
+      text-align: center;
+      margin-top: 24px;
+      margin-bottom: 24px;
+}
+
+.nav-item{
+      display: inline-block;
+}
+
+
+.btn{
+      margin-left: 8px;
+      margin-right: 8px;
+      height:50px;
+      width:50px;
+      border: 2px solid rgb(66, 66, 66);
+      background-color: rgb(66, 66, 66);
+      border-radius: 1000px;
+      position: relative;
+      color: white;
+      outline:none;
+      z-index: 1;
+      font-size: 30px;
+}
+
+.btn.btn-twitter:hover{
+      color:rgb(66, 66, 66);
+}
+
+.btn.btn-twitter::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      border-radius: 1000px;
+      z-index: -1;
+      background-color: white;
+      transform: scale(0);
+      transition: 0.2s ease-in-out;
+}
+
+.btn.btn-twitter:hover::before,
+.btn.btn-twitter:active::before{
+      transform: scale(1);
+}
+
+
+.h5{
+      text-align: center;
+      font-family: 'Courier New';
+      height:2em;
+}
+
+.h5 a{
+      font-family: Verdana;
+      text-decoration: none;
+      color:rgb(66, 66, 66);
+      
+}
+
+.ula{
+      text-decoration: none;
+      color: rgb(1, 224, 224);
+}
+
+.h2{
+      text-align: center;
+}
+
+
+
+
+
+.wrapper{
+      width: 100%;
+}
+
+.hr.hr-line{
+      border-top: 2px rgb(66, 66, 66) dashed;
+      border-bottom: none;
+      margin-bottom: 12px;
+      margin-left: 24px;
+      margin-right: 24px;
+}
+.h2-mywork,
+.h2-aboutme{
+      margin-top: 14px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: 400;
+      
+      margin-bottom: 8px;
+}
+
+.h2-programming-languages{
+      margin-top: 35px;
+      margin-bottom: 18px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight:400;
+      margin-right: 20px;
+      margin-left: 20px;
+}
+
+
+.h2-mywork{
+      margin-top: 30px;
+}
+
+img{
+      
+      width:50%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      margin-bottom: 14px;
+      margin-top: 8px;
+      
+}
+
+
+.p-aboutme{
+      text-align: justify;
+      margin-right:24px;
+      margin-left: 24px;
+      font-size: 16px;
+      font-family:'Courier New';
+
+}
+.p-languages,
+.ul-future,
+.ul-mywork{
+      margin-top: 40px;
+      list-style-image: url(../svgs/solid/chevron-circle-right.svg);
+      text-align: justify;
+      margin-right:24px;
+      margin-left: 44px;
+      font-size: 40px;
+      font-family:Arial, Helvetica, sans-serif;
+}
+
+.p-languages{
+      font-size: 20px;
+      text-align: center;
+      margin-right: 20px;
+      margin-left: 20px;
+}
+
+.ul-mywork li{
+      margin-bottom: 8px;
+}
+.ul-future{
+      margin-bottom:70px;
+}
+.ulp{
+      font-size: 16px;
+      margin-right:18px ;
+     
+      margin-left: 18px;
+}
+
+
+@media only screen and (min-width: 768px){
+     .me{
+           float: left;
+     } 
+
+     .navandinfo{
+           float: right;
+           
+     }
+
+     .h2-aboutme{
+           padding-top: 200px;
+           text-align: center;
+     }
+
+     .h2-mywork{
+           margin-top: 80px;
+     }
+     .h1-name{
+           margin-top: 50px;
+           font-size: 50px;
+     }
+     .h2-profession{
+           font-size: 20px;
+     }
+
+     .h1-name,.h2-profession{
+           text-align: left;
+           margin-left: 40px;
+     }
+
+     
+
+     .h5.info-email,.h5.info-blog,.h5.info-resume{
+           text-align: right;
+           margin-right: 40px;
+     }
+
+     .navigation{
+      margin-top: 40px;   
+      text-align: right;
+         margin-right: 30px;
+     }
+
+     .hr.hr-line{
+           margin-bottom: 40px;
+     }
+
+     .btn{
+ 
+           height:55px;
+           width:55px;
+     }
+
+
+     img{
+           
+           float: left;
+           height: 140px;
+           width:140px;
+           padding-right: 30px;
+           padding-left: 30px;
+     }
+
+     .p.p-aboutme{
+           margin-right: 40px;
+     }
+
+}
+
+
+@media only screen and (min-width: 1200px){
+
+      body{
+            margin-right: 100px;
+            margin-left: 100px;
+      }
+      .me{
+            float: left;
+      } 
+ 
+      .navandinfo{
+            float: right;
+            margin-right: 50px;
+            
+      }
+      
+ 
+      .h2-aboutme{
+            font-size: 30px;
+            padding-top: 200px;
+            text-align: center;
+      }
+ 
+      .h1-name{
+            margin-top: 50px;
+            font-size: 50px;
+      }
+      .h2-profession{
+            font-size: 24px;
+      }
+ 
+      .h1-name,.h2-profession{
+            text-align: left;
+            margin-left: 80px;
+      }
+ 
+      
+ 
+      .h5.info-email,.h5.info-blog,.h5.info-resume{
+            text-align: right;
+            margin-right: 60px;
+      }
+ 
+      .navigation{
+       margin-top: 40px;   
+       text-align: right;
+          margin-right: 50px;
+      }
+ 
+      .hr.hr-line{
+            margin-bottom: 40px;
+      }
+ 
+      .btn{
+  
+            height:55px;
+            width:55px;
+      }
+ 
+ 
+      img{
+            
+            float: left;
+            width:18%;
+            height:18%;
+            padding-right: 70px;
+            padding-left: 70px;
+      }
+ 
+      .p.p-aboutme{
+            margin-right: 70px;
+            font-size: 24px;
+      }
+ 
+      
+ 
+ 
+ 
+ }
